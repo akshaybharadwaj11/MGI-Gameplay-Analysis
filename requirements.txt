@@ -1,0 +1,8 @@
+transformers>=4.45.0 
+accelerate>=0.26.0
+qwen-vl-utils 
+pillow
+yt-dlp 
+opencv-python-headless
+flash-attn --no-build-isolation  # A100/L4 only
+num2words

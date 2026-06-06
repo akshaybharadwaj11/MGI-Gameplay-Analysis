@@ -1,0 +1,44 @@
+{
+  "pipeline": {
+    "method": "VLM zero-shot inference (no training)",
+    "model": "Qwen/Qwen2.5-VL-3B-Instruct",
+    "device": "cuda",
+    "sample_interval": 15,
+    "confidence_threshold": 0.5,
+    "min_event_duration_sec": 1.5
+  },
+  "video_metadata": [
+    {
+      "filename": "blitz_n64_longplay.mp4",
+      "source_path": "/content/data/raw/blitz_n64_longplay.mp4",
+      "fps": 59.94,
+      "total_frames": 5910,
+      "duration_seconds": 98.6,
+      "trim_start_frame": 0,
+      "trim_end_frame": 5910,
+      "trim_duration_seconds": 98.6
+    }
+  ],
+  "summary": {
+    "total_frames_sampled": 394,
+    "touchdown_frames": 12,
+    "touchdown_frame_rate": 0.0305,
+    "total_events_detected": 1
+  },
+  "events": [
+    {
+      "event_id": 1,
+      "video_name": "blitz_n64_longplay",
+      "start_frame": 1245,
+      "end_frame": 1410,
+      "start_timestamp_sec": 20.771,
+      "end_timestamp_sec": 23.524,
+      "duration_sec": 2.753,
+      "avg_confidence": 1.0,
+      "peak_confidence": 1.0,
+      "num_positive_frames": 12,
+      "detection_method": "Qwen2.5-VL-3B-Instruct zero-shot",
+      "gif_path": ""
+    }
+  ]
+}
