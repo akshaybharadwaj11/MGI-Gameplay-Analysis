@@ -88,16 +88,3 @@ Broadcast Frame
 ```
 
 ---
-
-## 5. Key Technical Decisions
-
-**Ground-contact point estimation.** Bounding box bottom-center is a 0.5–1.0 yard error source on perspective-heavy shots. Ankle keypoints from pose estimation reduce this to ~0.2 yards. For BEV approaches, the mask centroid projected onto the ground plane is most reliable.
-
-**Handling camera motion.** Broadcast cameras pan, zoom, and cut. The homography must be recomputed continuously. On camera cuts (detected via frame-difference spike), all track IDs must be re-initialized. A pre-built field template with yard lines at known intervals (5.33 yards between lines, 53.33 yard field width) constrains the homography.
-
-**Occlusion and pile-ups.** Near the line of scrimmage and during tackles, players overlap heavily. The tracker must handle partial occlusion (BoT-SORT's camera-motion compensation helps). Distance measurements during pile-ups are inherently noisy; flag them as low-confidence.
-
-**Real-time vs. offline.** Detection + tracking + color clustering runs at ~25 FPS on an A100. Adding pose estimation drops to ~12 FPS. Jersey OCR on every player every frame is unnecessary — run it on high-confidence crops every 30 frames and cache the result.
-
----
-
