@@ -219,3 +219,5 @@ __marimo__/
 data/
 
 .DS_Store
+CLAUDE.md
+outputs_yards
