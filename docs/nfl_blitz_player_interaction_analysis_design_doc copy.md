@@ -50,8 +50,6 @@ The task decomposes into five sequential stages, each with its own failure modes
 
 ## 4. Recommended Architecture
 
-For a balance of accuracy, speed, and engineering complexity, the recommended system combines elements of approaches 3.1, 3.2, and 3.4:
-
 ```
 Broadcast Frame
       │
